@@ -1,19 +1,27 @@
 import streamlit as st
 import os
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import numpy as np
 from PIL import Image
 
 
 image = Image.open('cia.png')
+
 
 def main():
     # Title
     st.title('Analyze CIA FactBook Data')
     st.image(image, caption='CIA', use_column_width=True)
 
+    # Link to SQL Analysis HTML Page
+    st.write("### Data Analysis Using SQL of CIA's FactBook Data")    
+    
+    link = '[Binder Link of the Notebook](http://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fshraddha-kr%2Fanalyze_CIA_factbookdata.git/01f572cc0c3ce28e82954c52a002a072ffd7f38f)'
+    st.markdown(link, unsafe_allow_html=True)
+    
+    
+    link = '[GitHub Repo Link](http://github.com/shraddha-kr/analyze_CIA_factbookdata.git)'
+    st.markdown(link, unsafe_allow_html=True)
+    
     # Dropdown menu to select a dataset
     st.write("### Select a Dataset from below: ")
     selected_dataset = select_dataset_file()
